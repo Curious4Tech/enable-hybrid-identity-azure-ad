@@ -152,7 +152,7 @@ In case you encounter this problem, that is how to solve it.
 
 ![image](https://github.com/user-attachments/assets/6cec0dfd-fa71-4096-840c-8095d36a069d)
 
-- The warning you will see is because of my domain, it's not routable but it still work. Click on **`Continue without ....`** and then clcik on **`Next`**.
+- The warning you will see is because of my domain, it's not routable but it still works Check on **`Continue without ....`** and then clcik on **`Next`**.
 
 
 ![image](https://github.com/user-attachments/assets/5c543020-5b29-422c-b4d3-7f9c2a297152)
