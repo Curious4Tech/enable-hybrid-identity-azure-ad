@@ -33,6 +33,10 @@ This guide provides a step-by-step process to install and configure **Azure AD C
    ```powershell
    Install-WindowsFeature RSAT-ADDS
    ```
+
+![image](https://github.com/user-attachments/assets/b72e194e-c85a-4ff4-9139-6f31357e091a)
+
+
 3. **Verify Time Settings**:
    Ensure the server’s time zone matches your domain controllers.
 
@@ -41,10 +45,51 @@ This guide provides a step-by-step process to install and configure **Azure AD C
 ### Step 2: Install Azure AD Connect
 1. **Run the Installer**:
    Download and run the `AzureADConnect.msi` file.
-2. **Choose Installation Type**:
+  - If you see something like on this screenshot, click on **`Exit`** and then solve it following these step.
+
+![image](https://github.com/user-attachments/assets/8d6d0906-55a2-4752-99c1-9ac665a5d36a)
+
+### Force .NET Framework to Use TLS 1.2 (mae sure dotnet is already installed)
+- Run the following commands in PowerShell with administrative privileges:
+
+```bah
+
+   # Enable TLS 1.2 for .NET Framework (System-wide settings)
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value 1
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value 1
+
+   # Verify the settings
+Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' | Select-Object SchUseStrongCrypto
+Get-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319' | Select-Object SchUseStrongCrypto
+
+```
+
+
+![image](https://github.com/user-attachments/assets/5a06f478-4c70-4c79-b6a3-5496e912cf1c)
+
+
+- Restart your system to apply the changes and run this command in PowerShell again:
+
+```bash
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+```
+- Verify the result by running:
+```bash
+[Net.ServicePointManager]::SecurityProtocol
+
+```
+It should now include **`Tls12`**.
+
+
+![image](https://github.com/user-attachments/assets/ea4229c4-2512-4236-b784-33198ada9f21)
+
+
+
+3. **Choose Installation Type**:
    - **Express Settings**: Quick setup with default settings.
    - **Customize**: For advanced configuration (recommended).
-3. **Customization Options** (if selected):
+4. **Customization Options** (if selected):
    - Install **synchronization services**.
    - Choose **Password Hash Synchronization** (default) or other authentication methods like **Pass-through Authentication** or **Federation**.
 
