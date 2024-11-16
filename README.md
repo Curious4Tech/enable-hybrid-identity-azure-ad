@@ -147,9 +147,28 @@ In case you encounter this problem, that is how to solve it.
 
 ![image](https://github.com/user-attachments/assets/84b9b890-5de2-49d2-b8f7-f16ca6981f96)
 
+- Your domian has been successfully added
+
+
+![image](https://github.com/user-attachments/assets/6cec0dfd-fa71-4096-840c-8095d36a069d)
+
+- The warning you will see is because of my domain, it's not routable but it still work. Click on **`Continue without ....`** and then clcik on **`Next`**.
+
+
+![image](https://github.com/user-attachments/assets/5c543020-5b29-422c-b4d3-7f9c2a297152)
 
 3. **Choose Synchronization Options**:
    - Sync all users/groups or filter by **Organizational Units (OUs)** or custom filters.
+
+
+![image](https://github.com/user-attachments/assets/c3b9786f-620d-4333-85cf-b1d6f8786af3)
+
+- For identifying users page, let the default configuration and then clcik on **`Next`**
+
+
+  ![image](https://github.com/user-attachments/assets/cccaa8da-1b95-4872-80fc-46de29784655)
+
+
 4. **Enable Optional Features**:
    - **Password Writeback**: Sync password resets from Azure AD to on-premises AD.
    - **Group Writeback**: Sync Azure AD groups to on-premises AD.
@@ -162,9 +181,11 @@ In case you encounter this problem, that is how to solve it.
    - Verify your settings and click **Install**.
 2. **Initial Synchronization**:
    - The **Synchronization Service Manager** will open, and the first sync will start automatically.
+  
+![image](https://github.com/user-attachments/assets/af212a83-a7c7-416a-acef-92b5fd818598)
+
 3. **Verify in Azure Portal**:
    - Navigate to **Azure Active Directory > Users** and ensure the on-premises users are listed.
-
 
 ![image](https://github.com/user-attachments/assets/615b9fd3-2c65-4fba-a095-340d0c09cefe)
 
