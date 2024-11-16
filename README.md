@@ -17,7 +17,7 @@ This guide provides a step-by-step process to install and configure **Azure AD C
 
 ### Network and DNS
 - Ensure DNS resolution for on-premises and Azure AD domains (recommended).
-- For this demo, am using just my local domain, it is not revolving but the procedure is still the same.
+- For this demo, am using just my local domain, it is not routable but the procedure is still the same for routable domain like **`yourcampany.com`**.
 
 ### Download
 - [Azure AD Connect Download](https://www.microsoft.com/en-us/download/details.aspx?id=47594)
