@@ -16,7 +16,8 @@ This guide provides a step-by-step process to install and configure **Azure AD C
 - **On-Premises AD**: Enterprise Admin account.
 
 ### Network and DNS
-- Ensure DNS resolution for on-premises and Azure AD domains.
+- Ensure DNS resolution for on-premises and Azure AD domains (recommended).
+- For this demo, am using just my local domain, it is not revolving but the procedure is still the same.
 
 ### Download
 - [Azure AD Connect Download](https://www.microsoft.com/en-us/download/details.aspx?id=47594)
@@ -30,6 +31,7 @@ This guide provides a step-by-step process to install and configure **Azure AD C
    Ensure the server is part of your on-premises AD domain.
 2. **Install Required Features**:
    Open PowerShell as Administrator and run:
+   
    ```powershell
    Install-WindowsFeature RSAT-ADDS
    ```
@@ -44,7 +46,7 @@ This guide provides a step-by-step process to install and configure **Azure AD C
 
 ### Step 2: Install Azure AD Connect
 1. **Run the Installer**:
-   Download and run the `AzureADConnect.msi` file.
+   Download and run the **`AzureADConnect.msi`** file.
   - If you see something like on this screenshot, click on **`Exit`** and then solve it following these step.
 
 ![image](https://github.com/user-attachments/assets/8d6d0906-55a2-4752-99c1-9ac665a5d36a)
@@ -84,20 +86,61 @@ It should now include **`Tls12`**.
 
 ![image](https://github.com/user-attachments/assets/ea4229c4-2512-4236-b784-33198ada9f21)
 
+- Now you can continue with the installation. Accept licence terms and conditions by checking **`I agree ......`** and then  click on **`Continue`**.
+
+
+![image](https://github.com/user-attachments/assets/af5d5427-47a0-4339-8231-31dec84af1f4)
 
 
 3. **Choose Installation Type**:
    - **Express Settings**: Quick setup with default settings.
    - **Customize**: For advanced configuration (recommended).
-4. **Customization Options** (if selected):
+   - Here we will go with **`Customize`**.
+
+
+![image](https://github.com/user-attachments/assets/85fa1b41-184e-436d-bfdc-e5e679eaa48f)
+
+
+
    - Install **synchronization services**.
-   - Choose **Password Hash Synchronization** (default) or other authentication methods like **Pass-through Authentication** or **Federation**.
+
+
+![image](https://github.com/user-attachments/assets/7cb7d7fb-75de-4350-8b84-62ef00f3503d)
+
+
+   - Choose **Password Hash Synchronization** (default) or other authentication methods like **Pass-through Authentication** or **Federation**.Then clcik on **`Next`** to continue.
+
+
+![image](https://github.com/user-attachments/assets/9fa5b537-5335-49db-9793-c5eb401c5da8)
 
 ---
 
 ### Step 3: Configure Azure AD Connect
 1. **Connect to Azure AD**:
-   - Enter your **Azure AD Global Administrator** credentials.
+   - Enter your **Azure AD Global Administrator** credentials
+
+![image](https://github.com/user-attachments/assets/800d350f-723d-4c81-8f81-aae7101a1516)
+
+In case you encounter this problem, that is how to solve it.
+
+![image](https://github.com/user-attachments/assets/76df7c4e-40b1-4eaf-bc11-9a5fd498fc81)
+
+### Check Group Policy (for servers with strict policies)
+
+- If you're on a domain-joined system, JavaScript might be disabled via Group Policy.
+   . Open Group Policy Editor:
+```bash 
+        Press Win + R, type gpedit.msc, and press Enter.
+```
+   . Navigate to: **`User Configuration > Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone`**
+
+   . Look for Turn on **`Allow active Scripting`**, set it to **`Enabled`**. Ensure the option Enable is selected.
+
+
+
+![image](https://github.com/user-attachments/assets/0d0eaad5-6561-4976-bff5-b35a763811f9)
+
+    
 2. **Connect to On-Premises AD**:
    - Provide **Enterprise Admin** credentials for your domain.
 3. **Choose Synchronization Options**:
