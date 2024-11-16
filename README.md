@@ -51,7 +51,7 @@ This guide provides a step-by-step process to install and configure **Azure AD C
 
 ![image](https://github.com/user-attachments/assets/8d6d0906-55a2-4752-99c1-9ac665a5d36a)
 
-### Force .NET Framework to Use TLS 1.2 (mae sure dotnet is already installed)
+### Force .NET Framework to Use TLS 1.2 (make sure dotnet is already installed)
 - Run the following commands in PowerShell with administrative privileges:
 
 ```bah
