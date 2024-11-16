@@ -174,6 +174,10 @@ In case you encounter this problem, that is how to solve it.
    - **Group Writeback**: Sync Azure AD groups to on-premises AD.
    - **Device Writeback**: Enable **Hybrid Azure AD Join**.
 
+
+![image](https://github.com/user-attachments/assets/f300ef24-598f-400d-8c34-0a8ed1c092cd)
+
+
 ---
 
 ### Step 4: Complete the Installation
