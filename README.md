@@ -231,3 +231,9 @@ Use `-PolicyType Initial` for a full sync.
 ## Resources
 - [Azure AD Connect Documentation](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/whatis-azure-ad-connect)
 - [Azure AD Connect Troubleshooting](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/tshoot-connect-sync-errors)
+  
+----
+
+## Congratulations! 🎉
+
+You’ve successfully installed and configured Azure AD Connect on Windows Server 2022! Your setup now enables seamless synchronization between your on-premises Active Directory and Azure AD, ensuring a unified identity solution for your organization.
