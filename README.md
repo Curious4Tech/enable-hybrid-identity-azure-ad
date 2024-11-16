@@ -143,6 +143,11 @@ In case you encounter this problem, that is how to solve it.
     
 2. **Connect to On-Premises AD**:
    - Provide **Enterprise Admin** credentials for your domain.
+
+
+![image](https://github.com/user-attachments/assets/84b9b890-5de2-49d2-b8f7-f16ca6981f96)
+
+
 3. **Choose Synchronization Options**:
    - Sync all users/groups or filter by **Organizational Units (OUs)** or custom filters.
 4. **Enable Optional Features**:
@@ -159,6 +164,9 @@ In case you encounter this problem, that is how to solve it.
    - The **Synchronization Service Manager** will open, and the first sync will start automatically.
 3. **Verify in Azure Portal**:
    - Navigate to **Azure Active Directory > Users** and ensure the on-premises users are listed.
+
+
+![image](https://github.com/user-attachments/assets/615b9fd3-2c65-4fba-a095-340d0c09cefe)
 
 ---
 
