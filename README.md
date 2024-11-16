@@ -121,9 +121,12 @@ It should now include **`Tls12`**.
 
 ![image](https://github.com/user-attachments/assets/800d350f-723d-4c81-8f81-aae7101a1516)
 
-In case you encounter this problem, that is how to solve it.
 
-![image](https://github.com/user-attachments/assets/76df7c4e-40b1-4eaf-bc11-9a5fd498fc81)
+ - In case you encounter this problem, that is how to solve it.
+
+
+![image](https://github.com/user-attachments/assets/ebf183ac-b1c8-4375-851e-bac951b3e677)
+
 
 ### Check Group Policy (for servers with strict policies)
 
@@ -132,9 +135,10 @@ In case you encounter this problem, that is how to solve it.
 ```bash 
         Press Win + R, type gpedit.msc, and press Enter.
 ```
-   . Navigate to: **`User Configuration > Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone`**
 
-   . Look for Turn on **`Allow active Scripting`**, set it to **`Enabled`**. Ensure the option Enable is selected.
+  . Navigate to: **`User Configuration > Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone`**
+
+  . Look for Turn on **`Allow active Scripting`**, set it to **`Enabled`**. Ensure the option **`Enable`** is selected.
 
 
 
